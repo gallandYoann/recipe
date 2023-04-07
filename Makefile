@@ -53,5 +53,10 @@ cc: c=c:c ## Clear the cache
 cc: sf
 
 ## —— Tools 🔨 ———————————————————————————————————————————————————————————————
+dependencies: ### Install all tools
+	@$(PHP_CONT) composer install -d tools/php-cs-fixer
+	@$(PHP_CONT) composer install -d tools/phpstan
 cs: ### Run PHPCS fixer
 	@$(PHP_CONT) tools/php-cs-fixer/vendor/bin/php-cs-fixer fix src --config=tools/php-cs-fixer/.php-cs-fixer.dist.php
+stan: ### Run Phpstan
+	@$(PHP_CONT) tools/phpstan/vendor/bin/phpstan analyse --configuration=tools/phpstan/phpstan.neon.dist
