@@ -62,5 +62,5 @@ stan: ### Run Phpstan
 	@$(PHP_CONT) tools/phpstan/vendor/bin/phpstan analyse --configuration=tools/phpstan/phpstan.neon.dist
 
 ## —— Test 🧪 ———————————————————————————————————————————————————————————————
-unit: ### Run PHPCS fixer
+unit: ### Run Php unit
 	@$(PHP_CONT) bin/phpunit
