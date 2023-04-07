@@ -2,6 +2,8 @@
 
 namespace App\Domain\Recipe\Entity;
 
+use App\Domain\Exception\InvalidArgumentException;
+
 class Recipe
 {
     public function __construct(
@@ -10,7 +12,7 @@ class Recipe
         private string $description = '',
     ) {
         if (empty($title)) {
-            throw new \InvalidArgumentException('The title can not be empty');
+            throw new InvalidArgumentException('The title can not be empty', 'recipe_title_empty');
         }
     }
 
